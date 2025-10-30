@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Kantumruy_Pro } from "next/font/google";
 import "./globals.css";
+import Banner from "@/components/header/Banner";
+import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import Error from "./error";
+import { Suspense } from "react";
+import Loading from "./loading";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const Khmer = Kantumruy_Pro({
+  variable: "--font-khmer",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const English = Inter({
+  variable: "--font-english",
   subsets: ["latin"],
 });
 
@@ -24,10 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${Khmer.variable} ${English.variable} antialiased`}>
+        <ErrorBoundary errorComponent={Error}>
+          <Banner />
+          <Navbar />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <Footer />
+        </ErrorBoundary>
       </body>
     </html>
   );
