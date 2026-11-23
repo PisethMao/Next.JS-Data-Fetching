@@ -13,6 +13,7 @@ export default function Home() {
       <p>Successfully deployed using GitHub Webhook!</p>
       <p>This is a test deployment.</p>
       <p>Happy coding!</p>
+      <p>Welcome to the Jenkins CI/CD Pipeline!</p>
     </main>
   );
 }
