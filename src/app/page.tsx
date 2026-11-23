@@ -12,6 +12,7 @@ export default function Home() {
       <h2>Deployment Version 2.0</h2>
       <p>Successfully deployed using GitHub Webhook!</p>
       <p>This is a test deployment.</p>
+      <p>Happy coding!</p>
     </main>
   );
 }
