@@ -11,6 +11,7 @@ export default function Home() {
       <h1>Jenkins CI/CD Pipeline</h1>
       <h2>Deployment Version 2.0</h2>
       <p>Successfully deployed using GitHub Webhook!</p>
+      <p>This is a test deployment.</p>
     </main>
   );
 }
